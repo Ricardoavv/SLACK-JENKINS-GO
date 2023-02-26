@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Checkout Codebase'){
             steps{
-                     checkout scm: [$class: 'GitSCM',branches: [[name: '*/main']],userRemoteConfigs:[[credentialsId: 'AAAAC3NzaC1lZDI1NTE5AAAAICb5yALCEp24Tatncxj3MzVPiYk4N3c2zOTiwLNucPVg raraya10642@ufide.ac.cr',url: 'git@github.com:Ricardoavv/SLACK-JENKINS-GO.git']]]
+                     checkout scm: [$class: 'GitSCM',branches: [[name: '*/main']],userRemoteConfigs:[[credentialsId: 'Jenkinspipeline',url: 'git@github.com:Ricardoavv/SLACK-JENKINS-GO.git']]]
             }
         }
         stage('Build'){
