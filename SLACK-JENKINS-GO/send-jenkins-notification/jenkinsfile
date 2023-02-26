@@ -1,4 +1,5 @@
-pipeline{
+pipeline {
+
     agent any
 
     stages{
@@ -28,7 +29,7 @@ pipeline{
     post {
         always{
             echo 'Sending Slack massage'
-            sh "go run send-jenkins-notification/slack-notification.go ${BUILD_URL} ${currentBuild.currentResult} ${BUILD_NUMBER} ${JOB_NAME}"
+            sh "go run SLACK-JENKINS-GO/send-jenkins-notification/slack-notification.go ${BUILD_URL} ${currentBuild.currentResult} ${BUILD_NUMBER} ${JOB_NAME}"
         }
 
 
