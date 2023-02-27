@@ -31,6 +31,8 @@ pipeline {
     post {
         always{
             echo 'Sending Slack massage'
+            sh 'go init model'
+            sh 'go get -u github.com/slack-go/slack'
             sh "go run SLACK-JENKINS-GO/send-jenkins-notification/slack-notification.go ${BUILD_URL} ${currentBuild.currentResult} ${BUILD_NUMBER} ${JOB_NAME}"
         }
 
